@@ -17,6 +17,7 @@
 <body>
     <h1>1. feladat</h1>
     <script type="module"> 
+        
         import { startFetch, getServerData } from './solutions/app1.js';
         // https://nettuts.hu/jms/js4-002/users?limit=5
 
@@ -34,11 +35,21 @@
         window.getUsers = getUsers;
         window.getUserData = getUserData;
 
+        getUsers('https://nettuts.hu/jms/js4-002/users?limit=5');
+        setTimeout( () => {
+            console.log(`Test server data: `, getUserData());
+        }, 3000);
+
         import { getMovies, getMovieData } from './solutions/app3.js';
         // https://nettuts.hu/jms/js4-002/movies?limit=5
 
         window.getMovies = getMovies;
         window.getMovieData = getMovieData;
+
+        getMovies('https://nettuts.hu/jms/js4-002/movies?limit=5');
+        setTimeout( () => {
+            console.log(`Test server data: `, getMovieData());
+        }, 3000);
 
         import { getCustomers, getCustomerData } from './solutions/app4.js';
         // https://nettuts.hu/jms/js4-002/users?limit=5
@@ -46,13 +57,21 @@
         window.getCustomers = getCustomers;
         window.getCustomerData = getCustomerData;
 
+        getCustomers('https://nettuts.hu/jms/js4-002/users?limit=5');
+        setTimeout( () => {
+            console.log(`Test server data: `, getCustomerData());
+        }, 3000);
+
         import { getProducts, getProductData } from "./solutions/app5.js";
 
         // Csak teszteléshez.
         window.getProducts = getProducts;
         window.getProductData = getProductData;
 
-        // window.getProducts('https://nettuts.hu/jms/js4-002/products?limit=3');
+    
+
+
+         window.getProducts('https://nettuts.hu/jms/js4-002/products?limit=3');
 
     </script>
     <div id="for-test"></div>
